@@ -3,14 +3,26 @@ package com.boot.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
 	   @GetMapping("/main")
 	    public String hello (Model model) {
 //	        model.addAttribute("data", "hello!!");
-	        return "/main";
+		   return "/main";
 	    }
 	   
+	   
+		@RequestMapping("/login")
+		public String login(Model model) {
+			return "/login";
 
+}
+		
+		@RequestMapping("/myPage")
+		public String myPage(Model model) {
+			return "/myPage";
+			
+		}
 }

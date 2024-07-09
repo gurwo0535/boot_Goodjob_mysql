@@ -45,8 +45,8 @@
         <h1 style="text-align: center; color: #007BFF;">기업 리스트</h1>
         <div id="company-list">
             <c:forEach var="company" items="${companyList}">
-                <div class="company-card" data-id="${company.id}">
-                    <h2>${company.name}</h2>
+                <div class="company-card" data-id="${company.corpInfo_No}">
+                    <h2>${company.corp_name}</h2>
                     <p>${company.description}</p>
                 </div>
             </c:forEach>
