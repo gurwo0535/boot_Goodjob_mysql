@@ -3,22 +3,17 @@
 
 <mapper namespace="com.boot.dao.CompanyListDAO">
 
-	<select id="list" resultType="com.boot.dto.CompanyListDTO">
+    <select id="list" resultType="com.boot.dto.CompanyListDTO">
+        select corpInfo_No, corp_name, corp_type, corp_address, corpInfo_Sal,
+               corpInfo_empNo, corpInfo_money, corpInfo_intro, corpInfo_birth
+        from companylist
+    </select>
 
-		select
-		corpInfo_No, corp_name, corp_type, corp_address, corpInfo_Sal,
-		corpInfo_empNo, corpInfo_money,corpInfo_intro, corpInfo_birth 
-		from
-		companylist
-		 </select>
-
-	<select id="contentView" resultType="com.boot.dto.CompanyListDTO">
-		  select 
-		  corpInfo_No, corp_name, corp_type, corp_address, corpInfo_Sal,
-		corpInfo_empNo, corpInfo_money,corpInfo_intro, corpInfo_birth 
-		from companylist 
-		where
-		 corpInfo_No=#{corpInfo_No}
-	</select>
+    <select id="contentView" resultType="com.boot.dto.CompanyListDTO">
+        select corpInfo_No, corp_name, corp_type, corp_address, corpInfo_Sal,
+               corpInfo_empNo, corpInfo_money, corpInfo_intro, corpInfo_birth
+        from companylist
+        where corpInfo_No=#{corpInfo_No}
+    </select>
 
 </mapper>

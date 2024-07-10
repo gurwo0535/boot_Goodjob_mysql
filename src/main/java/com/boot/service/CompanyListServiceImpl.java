@@ -14,38 +14,30 @@ import lombok.extern.slf4j.Slf4j;
 
 //인터페이스 상속 받고 오버라이딩한다 
 @Slf4j
-//BoardService와 연결한다 
-@Service("BoardService")
+@Service("CompanyListService")
 public class CompanyListServiceImpl implements CompanyListService {
 
 	@Autowired
 	private SqlSession sqlSession;
 	
 	
+
+	
 	@Override
 	public ArrayList<CompanyListDTO> list() {
-		log.info("@# BoardServiceImpl list");
+		log.info("@# CompanyListServiceImpl list");
 		
 		CompanyListDAO dao = sqlSession.getMapper(CompanyListDAO.class);
 		
-		ArrayList<CompanyListDTO> lsit = dao.list();
+		ArrayList<CompanyListDTO> list = dao.list();
 		
-		return lsit;
+		return list;
 	}
 
-	@Override
-		public void write(HashMap<String , String> param) {
-		log.info("@# BoardServiceImpl write");
-		
-		CompanyListDAO dao = sqlSession.getMapper(CompanyListDAO.class);
-		
-		 dao.write(param);
-		
-	}
 
 	@Override
 	public CompanyListDTO contentView(HashMap<String , String> param) {
-		log.info("@# BoardServiceImpl contentView");
+		log.info("@# CompanyListServiceImpl contentView");
 		
 		CompanyListDAO dao = sqlSession.getMapper(CompanyListDAO.class);
 		
@@ -54,5 +46,5 @@ public class CompanyListServiceImpl implements CompanyListService {
 		return dto;
 	}
 
-
+	
 }
